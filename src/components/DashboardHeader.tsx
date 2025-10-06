@@ -1,7 +1,10 @@
-import { Bell, Search, User, Menu } from "lucide-react";
+import { Bell, Search, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,6 +15,17 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function DashboardHeader() {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      toast.error("حدث خطأ في تسجيل الخروج");
+    } else {
+      toast.success("تم تسجيل الخروج بنجاح");
+      navigate("/auth");
+    }
+  };
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <div className="flex h-16 items-center gap-4 px-6">
@@ -48,7 +62,10 @@ export function DashboardHeader() {
               <DropdownMenuItem>الملف الشخصي</DropdownMenuItem>
               <DropdownMenuItem>الإعدادات</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="text-destructive">تسجيل الخروج</DropdownMenuItem>
+              <DropdownMenuItem onClick={handleLogout} className="text-destructive">
+                <LogOut className="ml-2 h-4 w-4" />
+                تسجيل الخروج
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
