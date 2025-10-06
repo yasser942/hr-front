@@ -19,11 +19,11 @@ export function DashboardHeader() {
         
         <div className="flex-1 flex items-center gap-4">
           <div className="relative w-full max-w-sm animate-fade-in-up">
-            <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
               placeholder="ابحث عن أي شيء..."
-              className="pr-10 bg-secondary border-border focus:border-primary transition-all"
+              className="pl-10 bg-secondary border-border focus:border-primary transition-all"
             />
           </div>
         </div>
@@ -31,14 +31,14 @@ export function DashboardHeader() {
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="icon" className="relative hover:bg-secondary">
             <Bell className="h-5 w-5" />
-            <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-destructive animate-pulse" />
+            <span className="absolute top-1 left-1 h-2 w-2 rounded-full bg-destructive animate-pulse" />
           </Button>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <div className="h-8 w-8 rounded-full bg-gradient-primary flex items-center justify-center">
-                  <User className="h-4 w-4 text-white" />
+          <Button variant="ghost" size="icon" className="rounded-full">
+                <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
+                  <User className="h-4 w-4 text-primary-foreground" />
                 </div>
               </Button>
             </DropdownMenuTrigger>

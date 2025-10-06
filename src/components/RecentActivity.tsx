@@ -52,8 +52,8 @@ export function RecentActivity() {
               className="flex items-start gap-4 p-3 rounded-lg hover:bg-secondary/50 transition-all duration-300 animate-slide-in-right"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <Avatar className="h-10 w-10 bg-gradient-primary">
-                <AvatarFallback className="bg-gradient-primary text-white font-bold">
+              <Avatar className="h-10 w-10 bg-primary">
+                <AvatarFallback className="bg-primary text-primary-foreground font-bold">
                   {activity.initials}
                 </AvatarFallback>
               </Avatar>

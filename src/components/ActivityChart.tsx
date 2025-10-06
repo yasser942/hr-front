@@ -23,24 +23,24 @@ export function ActivityChart() {
           <AreaChart data={data}>
             <defs>
               <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="hsl(267, 84%, 65%)" stopOpacity={0.8}/>
-                <stop offset="95%" stopColor="hsl(267, 84%, 65%)" stopOpacity={0}/>
+                <stop offset="5%" stopColor="hsl(0, 0%, 100%)" stopOpacity={0.8}/>
+                <stop offset="95%" stopColor="hsl(0, 0%, 100%)" stopOpacity={0}/>
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 15%, 18%)" />
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(0, 0%, 15%)" />
             <XAxis 
               dataKey="name" 
-              stroke="hsl(215, 20%, 65%)" 
+              stroke="hsl(0, 0%, 60%)" 
               style={{ fontSize: '12px', fontFamily: 'IBM Plex Sans Arabic' }}
             />
             <YAxis 
-              stroke="hsl(215, 20%, 65%)" 
+              stroke="hsl(0, 0%, 60%)" 
               style={{ fontSize: '12px', fontFamily: 'IBM Plex Sans Arabic' }}
             />
             <Tooltip 
               contentStyle={{ 
-                backgroundColor: 'hsl(220, 18%, 10%)', 
-                border: '1px solid hsl(220, 15%, 18%)',
+                backgroundColor: 'hsl(0, 0%, 8%)', 
+                border: '1px solid hsl(0, 0%, 15%)',
                 borderRadius: '8px',
                 fontFamily: 'IBM Plex Sans Arabic'
               }}
@@ -48,7 +48,7 @@ export function ActivityChart() {
             <Area 
               type="monotone" 
               dataKey="value" 
-              stroke="hsl(267, 84%, 65%)" 
+              stroke="hsl(0, 0%, 100%)" 
               strokeWidth={2}
               fillOpacity={1} 
               fill="url(#colorValue)" 

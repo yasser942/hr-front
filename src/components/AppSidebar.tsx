@@ -37,11 +37,11 @@ export function AppSidebar() {
   const { open } = useSidebar();
 
   return (
-    <Sidebar className="border-l border-sidebar-border">
+    <Sidebar className="border-r border-sidebar-border" side="right">
       <SidebarHeader className="p-6 border-b border-sidebar-border">
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow">
-            <LayoutDashboard className="h-5 w-5 text-white" />
+          <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center shadow-glow">
+            <LayoutDashboard className="h-5 w-5 text-primary-foreground" />
           </div>
           {open && (
             <div className="animate-fade-in-up">
