@@ -8,6 +8,10 @@ import {
   FileText,
   TrendingUp,
   Calendar,
+  Building2,
+  Briefcase,
+  CalendarDays,
+  Clock,
 } from "lucide-react";
 import {
   Sidebar,
@@ -24,8 +28,12 @@ import {
 
 const menuItems = [
   { title: "لوحة التحكم", url: "/", icon: LayoutDashboard },
+  { title: "الموظفين", url: "/employees", icon: Users },
+  { title: "الأقسام", url: "/departments", icon: Building2 },
+  { title: "المناصب", url: "/positions", icon: Briefcase },
+  { title: "طلبات الإجازة", url: "/leave-requests", icon: CalendarDays },
+  { title: "الحضور والانصراف", url: "/attendance", icon: Clock },
   { title: "التحليلات", url: "/analytics", icon: BarChart3 },
-  { title: "المستخدمون", url: "/users", icon: Users },
   { title: "التقارير", url: "/reports", icon: FileText },
   { title: "الإحصائيات", url: "/statistics", icon: TrendingUp },
   { title: "التقويم", url: "/calendar", icon: Calendar },
@@ -64,10 +72,9 @@ export function AppSidebar() {
                       to={item.url}
                       end
                       className={({ isActive }) =>
-                        `flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-300 ${
-                          isActive
-                            ? "bg-sidebar-accent text-primary font-semibold shadow-glow"
-                            : "text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-primary"
+                        `flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-300 ${isActive
+                          ? "bg-sidebar-accent text-primary font-semibold shadow-glow"
+                          : "text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-primary"
                         }`
                       }
                     >
